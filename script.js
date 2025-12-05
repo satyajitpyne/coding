@@ -21,7 +21,7 @@ para.addEventListener("mouseenter", function(){
     },30)
     setTimeout(function(){
         clearInterval(h)
-        para.innerHTML = ' Welcome to Satya website'
+        para.innerHTML = ' Welcome to My website'
 
     },900)
 })
