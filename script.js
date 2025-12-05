@@ -1,27 +1,26 @@
-
 addEventListener("mousemove", (e)=>{
  console.log(e.clientX, e.clientY)
 
  document.body.style.setProperty("--x", e.clientX + 'px')
  document.body.style.setProperty('--y', e.clientY + 'px')
 })
-const para = document.querySelector('.box p')
-const character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+const para = document.querySelector(".box h2");
+const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+let para1 = para.innerText;
+let iteration = 0;
 
-const j = para.innerHTML
-para.addEventListener("mouseenter", function(){
-     var h = setInterval(function(){ 
-    const jk = j.split('').map(function(df){
-        var c = character.split('')
-        return df.innerHTML = c[Math.floor(Math.random()*53)]
-        
-    }).join('')
-    para.innerText = jk
-    
-    },30)
-    setTimeout(function(){
-        clearInterval(h)
-        para.innerHTML = ' Welcome to My website'
+function randomText() {
+     const jk = para1.split("").map((ch, index) => {
+        iteration += 0.05;
 
-    },900)
-})
+        if (index < iteration) {
+            return ch; 
+        }
+        return characters.split("")[Math.floor(Math.random()*52)];
+
+    }).join("");
+
+    para.innerHTML = jk;  
+}
+
+setInterval(randomText, 500);
