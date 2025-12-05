@@ -7,11 +7,13 @@ addEventListener("mousemove", (e)=>{
 })
 const para = document.querySelector('.box p')
 const character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-const j = para.innerText
+
+const j = para.innerHTML
 para.addEventListener("mouseenter", function(){
      var h = setInterval(function(){ 
-    const jk = j.split('').map(function(){
-        return character.split('')[ Math.floor(Math.random()*53)]
+    const jk = j.split('').map(function(df){
+        var c = character.split('')
+        return df.innerHTML = c[Math.floor(Math.random()*53)]
         
     }).join('')
     para.innerText = jk
@@ -19,7 +21,7 @@ para.addEventListener("mouseenter", function(){
     },30)
     setTimeout(function(){
         clearInterval(h)
-        para.innerHTML = 'Welcome to Satya website'
+        para.innerHTML = ' Welcome to Satya website'
 
     },900)
 })
